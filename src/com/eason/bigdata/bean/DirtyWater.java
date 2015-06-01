@@ -3,6 +3,11 @@ package com.eason.bigdata.bean;
 import java.io.File;
 import java.util.List;
 
+/**
+ * each dirty water means a sub folder in main folder, and it contains all really files in the sub folder 
+ * @author admin
+ *
+ */
 public class DirtyWater {
 	
 	private String fileAbsoultePath;

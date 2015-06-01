@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,15 +19,18 @@ import com.eason.bigdata.loader.FileLoader;
 public class FileCleaner {
 	
 	private static final Logger logger = Logger.getLogger(FileCleaner.class);
+	
+	private static Map<String, Long> globalMap = new HashMap<String, Long>();
 
 	public static void main(String[] args) {
 		List<DirtyWater> dirtyWaters = FileLoader.listFilesToCategory();
 		List<PureWater> pureWaters = new ArrayList<PureWater>();
 		for (DirtyWater dirtyWater : dirtyWaters) {
 			List<File> files = dirtyWater.getSubFiles();
-			PureWater pureWater = new PureWater();
-			pureWater.setFileAbsoultePath(dirtyWater.getFileAbsoultePath());
+			
 			for (File file : files) {
+				PureWater pureWater = new PureWater();
+				pureWater.setFileAbsoultePath(file.getAbsolutePath());
 				FileInputStream fis = null;
 				InputStreamReader isr = null;
 				BufferedReader bufferedReader = null;
@@ -46,18 +50,21 @@ public class FileCleaner {
 						isr.close();
 						fis.close();
 					} catch (IOException e) {
-						logger.error(e);
+						logger.error("failed to close the readers",e);
 					}
 				}
-				
+				logger.info(pureWater.getFileAbsoultePath() + "\t\t\t\t" +pureWater.getWords().size());
+				pureWater.calculateTF();
+				pureWaters.add(pureWater);
 			}
-			pureWaters.add(pureWater);
+			break;
 		}
+		logger.info(pureWaters.size() + "|" + globalMap.size());
 	}
 
 	private static PureWater filterTheDirty(PureWater pureWater, String lineStr) {
 		Map<String, Integer> map = pureWater.getWords();
-		String[] strs = lineStr.split(FilterRule.SPACE_STRING);
+		String[] strs = lineStr.split(FilterRule.SPLITER);
 		for (String str : strs) {
 			//remove . , ! etc  deal with regix only all are characters and numbers
 			if(! FilterRule.SENSITIVE_WORD_LIST.contains(str.toLowerCase())  && FilterRule.REST){
@@ -73,6 +80,11 @@ public class FileCleaner {
 					pureWater.setMaxFreqKey(str.toLowerCase());
 				}
 				
+				if(globalMap.containsKey(str.toLowerCase())){
+					globalMap.put(str.toLowerCase(), globalMap.get(str.toLowerCase()) + 1);
+				}else{
+					globalMap.put(str.toLowerCase(), 1L);
+				}
 			}
 		}
 		return pureWater;

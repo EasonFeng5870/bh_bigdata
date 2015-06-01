@@ -17,8 +17,7 @@ public class FileLoader {
 	public static int fileCounter = 0;
 	
 	public static List<DirtyWater> listFilesToCategory(){
-		File file = new File("D:\\Program Files (x86)\\qq\\372427166\\FileRecv\\short-text-documents\\data");
-		logger.info("--" + file.getName());
+		File file = new File("D:\\myplugins\\bigdata\\short-text-documents\\data");
 		File[] files = file.listFiles();
 		List<DirtyWater> dirtyWaters = new ArrayList<DirtyWater>();
 		for (File subFile : files) {
@@ -30,9 +29,11 @@ public class FileLoader {
 				d.setSubFiles(Arrays.asList(files2));
 				dirtyWaters.add(d);
 				fileCounter += files2.length;
+				logger.info("the second folder is : " + subFile.getAbsolutePath() +"\t\t\t\t" + files2.length);
 			}
 		}
-		logger.info("all files number is: " + fileCounter);
+		logger.info("there are " + fileCounter + " files in ----" + file.getAbsolutePath());
+		logger.info(dirtyWaters.size());
 		return dirtyWaters;
 	}
 

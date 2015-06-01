@@ -6,7 +6,7 @@ import java.util.List;
 public class FilterRule {
 	
 	public static final int LENGTH_AT_LEAST = 3;
-	public static final String SPACE_STRING = " ";
+	public static final String SPLITER = " ";
 	
 	public static final List<String> SENSITIVE_WORD_LIST = new ArrayList<String>();
 	public static final boolean REST = true;
