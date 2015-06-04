@@ -3,8 +3,8 @@ package com.eason.bigdata.bean;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 
@@ -17,7 +17,7 @@ public class PureWater {
 	
 	private Map<String, Integer> words = new HashMap<String, Integer>();// Data Structure[<word, counter>]
 	
-	private Map<String, Double> wordsTF = new HashMap<String, Double>();
+	private Map<String, Values> wordsValue = new HashMap<String, Values>();
 	
 	private String maxFreqKey = "";
 
@@ -45,30 +45,31 @@ public class PureWater {
 		this.words = words;
 	}
 
-	public Map<String, Double> getWordsTF() {
-		return wordsTF;
+	public Map<String, Values> getWordsValue() {
+		return wordsValue;
 	}
 
-	public void setWordsTF(Map<String, Double> wordsTF) {
-		this.wordsTF = wordsTF;
+	public void setWordsValue(Map<String, Values> wordsValue) {
+		this.wordsValue = wordsValue;
 	}
 
 	/**
 	 * calculate every doc term frequency.
 	 */
 	public void calculateTF() {
-		if(words.size() > 0){
+		if(words != null && words.size() > 0){
 			int maxFrequcy = words.get(maxFreqKey);
 			Set<Entry<String, Integer>> set = words.entrySet();
 			Iterator<Entry<String, Integer>> iterator = set.iterator();
 			while(iterator.hasNext()){
-				Entry<String, Integer> entry = iterator.next();
-				double d = entry.getValue()/maxFrequcy;
-				wordsTF.put(entry.getKey(), d);
+				final Entry<String, Integer> entry = iterator.next();
+				Values values = new Values();
+				values.setTermFrequency(entry.getValue()*1.0/maxFrequcy);
+				values.setCounter(entry.getValue());
+				wordsValue.put(entry.getKey(), values);
 			}
-			set.iterator();
 		}
-		logger.info("the purewater for "+ this.wordsTF);
+		logger.info("the purewater for "+ this.wordsValue);
 	}
 	
 }

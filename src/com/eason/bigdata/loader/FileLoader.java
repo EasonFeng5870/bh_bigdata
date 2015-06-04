@@ -36,5 +36,10 @@ public class FileLoader {
 		logger.info(dirtyWaters.size());
 		return dirtyWaters;
 	}
+	
+	public static void main(String[] args) {
+		List<DirtyWater> dirtyWaters = FileLoader.listFilesToCategory();
+		System.out.println(dirtyWaters.size());
+	}
 
 }
