@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/httpcomponents-client-4.4.1-bin/httpcomponents-client-4.4.1/lib/commons-codec-1.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/httpcomponents-client-4.4.1-bin/httpcomponents-client-4.4.1/lib/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/httpcomponents-client-4.4.1-bin/httpcomponents-client-4.4.1/lib/fluent-hc-4.4.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/httpcomponents-client-4.4.1-bin/httpcomponents-client-4.4.1/lib/httpclient-4.4.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/httpcomponents-client-4.4.1-bin/httpcomponents-client-4.4.1/lib/httpclient-cache-4.4.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/httpcomponents-client-4.4.1-bin/httpcomponents-client-4.4.1/lib/httpclient-win-4.4.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/httpcomponents-client-4.4.1-bin/httpcomponents-client-4.4.1/lib/httpcore-4.4.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/httpcomponents-client-4.4.1-bin/httpcomponents-client-4.4.1/lib/httpmime-4.4.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/httpcomponents-client-4.4.1-bin/httpcomponents-client-4.4.1/lib/jna-4.1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator/Desktop/httpcomponents-client-4.4.1-bin/httpcomponents-client-4.4.1/lib/jna-platform-4.1.0.jar"/>
-	<classpathentry kind="lib" path="E:/spitermanData/jsoup-1.8.2.jar"/>
-	<classpathentry kind="lib" path="E:/repos/junit/junit/4.11/junit-4.11.jar"/>
-	<classpathentry kind="lib" path="E:/repos/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/myplugins/libs/httpcomponents/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="D:/myplugins/libs/httpcomponents/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/myplugins/libs/httpcomponents/fluent-hc-4.4.1.jar"/>
+	<classpathentry kind="lib" path="D:/myplugins/libs/httpcomponents/httpclient-4.4.1.jar"/>
+	<classpathentry kind="lib" path="D:/myplugins/libs/httpcomponents/httpclient-cache-4.4.1.jar"/>
+	<classpathentry kind="lib" path="D:/myplugins/libs/httpcomponents/httpclient-win-4.4.1.jar"/>
+	<classpathentry kind="lib" path="D:/myplugins/libs/httpcomponents/httpcore-4.4.1.jar"/>
+	<classpathentry kind="lib" path="D:/myplugins/libs/httpcomponents/httpmime-4.4.1.jar"/>
+	<classpathentry kind="lib" path="D:/myplugins/libs/httpcomponents/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="D:/myplugins/libs/httpcomponents/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="lib" path="D:/myplugins/libs/jsoup-1.8.2.jar"/>
+	<classpathentry kind="lib" path="D:/myplugins/libs/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="D:/myplugins/libs/log4j-1.2.17.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -6,18 +6,16 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
-
 
 public class PureWater {
 	
-	private static final Logger logger = Logger.getLogger(PureWater.class); 
+	//private static final Logger logger = Logger.getLogger(PureWater.class); 
 	
 	private String fileAbsoultePath;//each file
 	
 	private Map<String, Integer> words = new HashMap<String, Integer>();// Data Structure[<word, counter>]
 	
-	private Map<String, Values> wordsValue = new HashMap<String, Values>();
+	//private Map<String, Values> wordsValue = new HashMap<String, Values>();
 	
 	private String maxFreqKey = "";
 
@@ -45,13 +43,13 @@ public class PureWater {
 		this.words = words;
 	}
 
-	public Map<String, Values> getWordsValue() {
-		return wordsValue;
-	}
-
-	public void setWordsValue(Map<String, Values> wordsValue) {
-		this.wordsValue = wordsValue;
-	}
+//	public Map<String, Values> getWordsValue() {
+//		return wordsValue;
+//	}
+//
+//	public void setWordsValue(Map<String, Values> wordsValue) {
+//		this.wordsValue = wordsValue;
+//	}
 
 	/**
 	 * calculate every doc term frequency.
@@ -66,10 +64,10 @@ public class PureWater {
 				Values values = new Values();
 				values.setTermFrequency(entry.getValue()*1.0/maxFrequcy);
 				values.setCounter(entry.getValue());
-				wordsValue.put(entry.getKey(), values);
+				//wordsValue.put(entry.getKey(), values);
 			}
 		}
-		logger.info("the purewater for "+ this.wordsValue);
+		//logger.info("the purewater for "+ this.wordsValue);
 	}
 	
 }
